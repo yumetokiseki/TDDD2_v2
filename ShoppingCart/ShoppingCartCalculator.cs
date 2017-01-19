@@ -15,18 +15,21 @@ namespace ShoppingCart
             if (books.Count == 1)
             {
                 discount = 1.0;
-                result = CalculateTotal(books, discount);
             }
             else if (books.Count == 2)
             {
                 discount = 0.95;
-                result = CalculateTotal(books, discount);
             }
             else if (books.Count == 3)
             {
                 discount = 0.9;
-                result = CalculateTotal(books, discount);
             }
+            else if (books.Count == 4)
+            {
+                discount = 0.8;           
+            }
+
+            result = CalculateTotal(books, discount);
 
             return result;
         }
