@@ -32,7 +32,7 @@ namespace ShoppingCartTest
                 new Book { Name="Vol_1" , Price = 100 , Count = 1 },
                 new Book { Name="Vol_2" , Price = 100 , Count = 1 }
             };
-            var expected = 200;
+            var expected = 190;
 
             var shoppingCartCalculator = new ShoppingCartCalculator();
             var actual = shoppingCartCalculator.CalculateTotal(books);
