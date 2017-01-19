@@ -97,5 +97,23 @@ namespace ShoppingCartTest
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void 情境六第一集1本_第二集1本_第三集2本_預期370元()
+        {
+            var books = new List<Book>
+            {
+                new Book { Name="Vol_1" , Price = 100 , Count = 1 },
+                new Book { Name="Vol_2" , Price = 100 , Count = 1 },
+                new Book { Name="Vol_3" , Price = 100 , Count = 2 }
+            };
+            var expected = 370;
+
+            var shoppingCartCalculator = new ShoppingCartCalculator();
+            var actual = shoppingCartCalculator.CalculateTotal(books);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
