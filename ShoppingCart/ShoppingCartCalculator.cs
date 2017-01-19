@@ -38,27 +38,29 @@ namespace ShoppingCart
 
                 result += CalculateTotal(bookstemp, discount);
 
-                List<Book> booksGrouptemp = new List<Book>(bookstemp);
-
-                foreach (var tempItem in bookstemp)
-                {
-                    if (tempItem.Count > 1)
-                    {
-                        tempItem.Count = tempItem.Count - 1;
-                    }
-                    else if (tempItem.Count == 1)
-                    {
-                        booksGrouptemp.Remove(tempItem);
-                    }
-                }
-
-                bookstemp = booksGrouptemp;
+                bookstemp = ReduceBooksGroup(bookstemp);
             }
 
-
-
-
             return result;
+        }
+
+        private static List<Book> ReduceBooksGroup(List<Book> bookstemp)
+        {
+            List<Book> booksGrouptemp = new List<Book>(bookstemp);
+
+            foreach (var tempItem in bookstemp)
+            {
+                if (tempItem.Count > 1)
+                {
+                    tempItem.Count = tempItem.Count - 1;
+                }
+                else if (tempItem.Count == 1)
+                {
+                    booksGrouptemp.Remove(tempItem);
+                }
+            }
+
+            return booksGrouptemp;
         }
 
         private static double CalculateTotal(List<Book> books, double discount)
