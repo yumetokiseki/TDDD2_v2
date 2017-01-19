@@ -28,6 +28,10 @@ namespace ShoppingCart
             {
                 discount = 0.8;
             }
+            else if (books.Count == 5)
+            {
+                discount = 0.75;
+            }
 
             result = CalculateTotal(books, discount);
 
