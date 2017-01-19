@@ -26,7 +26,7 @@ namespace ShoppingCart
             }
             else if (books.Count == 4)
             {
-                discount = 0.8;           
+                discount = 0.8;
             }
 
             result = CalculateTotal(books, discount);
